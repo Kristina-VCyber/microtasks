@@ -1,6 +1,6 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
+import {Button} from "./components/Button";
 
 function App() {
     // const myFirstSubscriber = (event: React.MouseEvent<HTMLButtonElement>)  => {
@@ -14,26 +14,20 @@ function App() {
     //     console.log(name)
     // }
 
-
-    const firstBtn = () => {
-        console.log(100200)
+    const Button1Foo = (subscriber:string, age:number, address:string) => {
+        console.log(subscriber,age, address)
+    }
+    const Button2Foo = (subscriber:string, age:number) => {
+        console.log(subscriber,age)
     }
 
-    const secondBtn = (value:number) => {
-        console.log(value)
-    }
-  return (
-    <div className="App">
-      {/*<button onClick={(event) => {console.log("Hello")}}>MyYouTubeChanel-1</button>*/}
-      {/*<button onClick={ (event) => onClickHandler("Dobbi")}>  MyYouTubeChanel-1</button>*/}
-      {/*<button onClick={(event) => onClickHandler("Ron")}>MyYouTubeChanel-2</button>*/}
 
-
-<button onClick={firstBtn}>1</button>
-<button onClick={(event)=>secondBtn(100200)}>2</button>
-
-    </div>
-  );
+    return (
+        <div className={"App"}>
+            <Button name={"MyYouTubeChannel-1"} callBack={() => Button1Foo ("I'm Dobbi", 21, "live in Tokyo")}/>
+            <Button name={"MyYouTubeChannel-2"} callBack={() => Button2Foo ("I'm Han Solo", 42)}/>
+        </div>
+    );
 }
 
 export default App;
