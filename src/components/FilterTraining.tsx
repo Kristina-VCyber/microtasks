@@ -1,4 +1,5 @@
 import {useState} from "react";
+type FilterType = "all"| "ruble"| "dollar";
 
 export const FilterTraining = () => {
 
@@ -15,8 +16,21 @@ export const FilterTraining = () => {
     ])
 
 
-    let currentMoney = money.filter((filteredMoney) => filteredMoney.banknote === "ruble")
+    const [filter , setFilter]  = useState( "all") ;
 
+let currentMoney = money;
+    if (filter === "ruble") {
+        currentMoney = money.filter((filteredMoney) => filteredMoney.banknote === "rubles")
+    }
+    if (filter === "dollar"){
+        currentMoney = money.filter((filteredMoney) => filteredMoney.banknote === "dollar")
+    }
+
+const onClickFilterHandler = (buttonName:FilterType) => {
+
+setFilter(buttonName);
+    // console.log(buttonName)
+}
 
 
 
@@ -34,6 +48,11 @@ export const FilterTraining = () => {
             })}
         </ul>
 
+            <div style={{marginLeft:"35px"}}>
+                <button onClick={() => onClickFilterHandler("all")}>all</button>
+                <button onClick={() =>onClickFilterHandler("ruble")}>rouble</button>
+                <button onClick={() =>onClickFilterHandler ("dollar")}>dollar</button>
+            </div>
         </>
 
     )
