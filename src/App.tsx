@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import {Button} from "./components/Button";
+import {UseStateTraining} from "./components/UseStateTraining";
 
 function App() {
     // const myFirstSubscriber = (event: React.MouseEvent<HTMLButtonElement>)  => {
@@ -29,6 +30,8 @@ function App() {
             <Button name={"MyYouTubeChannel-1"} callBack={() => Button1Foo("I'm Dobbi", 21, "live in Tokyo")}/>
             <Button name={"MyYouTubeChannel-2"} callBack={() => Button2Foo("I'm Han Solo", 42)}/>
             <Button name={"StupidButton"} callBack={ButtonLastExpression}/>
+
+            <UseStateTraining/>
         </div>
     );
 }
