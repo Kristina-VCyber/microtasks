@@ -18,6 +18,7 @@ export const FullInput = (props: FullInput) => {
 
     const onClickBtnHandler = () => {
         props.addMessage(inputTitle)
+        setInputTitle("")
     }
 
 
