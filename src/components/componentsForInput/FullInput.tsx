@@ -9,9 +9,11 @@ export const FullInput = (props: FullInput) => {
     let [inputTitle, setInputTitle] = useState("")
 
     console.log(inputTitle)
+
     const onChangeInputHandler = (event: ChangeEvent<HTMLInputElement>) => {
 
         setInputTitle(event.currentTarget.value)
+
     }
 
     const onClickBtnHandler = () => {
@@ -21,7 +23,7 @@ export const FullInput = (props: FullInput) => {
 
     return (
         <div>
-            <input onChange={onChangeInputHandler}/>
+            <input value={inputTitle} onChange={onChangeInputHandler}/>
             <button onClick={onClickBtnHandler}>+
             </button>
         </div>)

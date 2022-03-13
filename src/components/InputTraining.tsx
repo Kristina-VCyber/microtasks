@@ -15,6 +15,8 @@ export const InputTraining = (props: Props) => {
 
     const addMessage = (inputTitle: string) => {
         console.log(inputTitle)
+        let newMessage = {message:inputTitle}
+        setMessage([newMessage,...message])
     }
 
     return (
